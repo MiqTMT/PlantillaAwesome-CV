@@ -1,0 +1,35 @@
+Your CV already has a strong base: the profile is coherent, the research niche is clear, and the publication record is a real asset. The biggest gains now would come from making the document feel more results-driven and more targeted to the kind of role you want next.
+
+**Highest-impact improvements**
+
+- Make the headline more specific in [cv.tex](/d:/Miquel/Documents/GitHub/PlantillaAwesome-CV/cv.tex:13). `PhD Researcher · Control and Energy Systems Engineer` is solid, but a sharper version would foreground batteries and estimation, for example: `Battery State Estimation Researcher · Control & Energy Systems Engineer`.
+- Strengthen the summary in [cv.tex](/d:/Miquel/Documents/GitHub/PlantillaAwesome-CV/cv.tex:23). Right now it reads a bit general. It would be stronger if it named your differentiators: lithium-ion SoC/OCV estimation, control-oriented modeling, hybrid energy systems, experimental platforms, and publication record.
+- Quantify impact in [sections/experience.tex](/d:/Miquel/Documents/GitHub/PlantillaAwesome-CV/sections/experience.tex:21). Most bullets describe responsibilities, not outcomes. Try to turn each main role into “what you built / improved / validated / led” with evidence such as number of test benches, sensors integrated, students led, systems deployed, papers produced, or time saved.
+- Remove or reduce company/institute description bullets like the starred items in [sections/experience.tex](/d:/Miquel/Documents/GitHub/PlantillaAwesome-CV/sections/experience.tex:20). They take valuable space and employers usually care more about your contribution than a description of the organization.
+- Rework the skills section in [sections/skills.tex](/d:/Miquel/Documents/GitHub/PlantillaAwesome-CV/sections/skills.tex:13). It currently mixes strong skills with weaker “coursework” items, which dilutes the profile. Keep only tools you would be happy to use professionally.
+
+**Content suggestions by section**
+
+- Experience: your `Research Engineer` entry should be the flagship. I’d rewrite it around 4 bullets:
+  - battery modeling and state estimation research,
+  - experimental platform development,
+  - control/hardware/software integration,
+  - project or publication outcomes.
+- Experience: `Head of Electronics and Powertrain` is strong and could sell leadership better in [sections/experience.tex](/d:/Miquel/Documents/GitHub/PlantillaAwesome-CV/sections/experience.tex:37). Mention design decisions, subsystem ownership, validation/testing, race-readiness, or performance improvements if you have them.
+- Education: the theses are good, but the section in [sections/education.tex](/d:/Miquel/Documents/GitHub/PlantillaAwesome-CV/sections/education.tex:20) could benefit from one extra line for the PhD with methods or contributions, not just topic.
+- Publications: this is valuable, but for industry CVs it may be too long relative to experience. Consider listing only selected publications, or move publications above education only for academic/research applications. For industry, `Experience -> Skills -> Education -> Selected Publications` may work better.
+- Skills: split into cleaner categories such as `Battery/Control`, `Programming`, `Hardware & Lab`, `Languages`. I would remove softer items like `assertiveness` and `self-motivation`; they rarely help on a CV unless evidenced through experience.
+- Contact/header: if you have them, add GitHub or personal website in [cv.tex](/d:/Miquel/Documents/GitHub/PlantillaAwesome-CV/cv.tex:19). For technical roles, that often helps more than a generic profile line.
+
+**Formatting and credibility fixes**
+
+- Fix encoding issues in several places, for example [cv.tex](/d:/Miquel/Documents/GitHub/PlantillaAwesome-CV/cv.tex:31), [sections/experience.tex](/d:/Miquel/Documents/GitHub/PlantillaAwesome-CV/sections/experience.tex:32), [sections/education.tex](/d:/Miquel/Documents/GitHub/PlantillaAwesome-CV/sections/education.tex:38), and [sections/publications.tex](/d:/Miquel/Documents/GitHub/PlantillaAwesome-CV/sections/publications.tex:30). Names like `Martí`, `Geltrú`, `Alfarràs`, and `Costa-Castelló` should render correctly.
+- Standardize spelling and naming. You currently mix `modeling` and `modelling`, and `Geltru` / `Geltrú`. Pick one English variant and keep all place names accurate.
+- Consider replacing `Submitted to ..., 2026` in [sections/publications.tex](/d:/Miquel/Documents/GitHub/PlantillaAwesome-CV/sections/publications.tex:13) with `Manuscript submitted` or a separate `Working papers` subsection. “Submitted to journal X” can be read as less stable than accepted/published work.
+- Shorten very long publication titles if space is tight, especially in [sections/publications.tex](/d:/Miquel/Documents/GitHub/PlantillaAwesome-CV/sections/publications.tex:37). Full titles are fine for academic CVs, but selected/shortened titles are often better for industry CVs.
+
+**Overall positioning**
+
+If your target is industry, the CV should lean harder into engineering execution: experimental platforms, controls, embedded/lab systems, validation, and leadership. If your target is academia or R&D, keep publications prominent and expand research contributions slightly.
+
+If you want, I can take the next step and directly rewrite the LaTeX into a stronger industry-focused version, an academic-focused version, or both.
