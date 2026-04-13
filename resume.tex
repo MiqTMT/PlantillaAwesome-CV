@@ -1,0 +1,39 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt, a4paper]{awesome-cv}
+
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+\colorlet{awesome}{awesome-red}
+\setbool{acvSectionColorHighlight}{true}
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+% Personal information
+\name{Miquel}{Marti Florences}
+\position{PhD Researcher{\enskip\cdotp\enskip}Control and Energy Systems Engineer}
+\address{Barcelona, Spain}
+
+\mobile{+34 681 302 718}
+\email{miqueletmarti@gmail.com}
+\linkedin{miquelmartiflorences}
+% \homepage{your-site.com}
+% \github{your-github}
+% \googlescholar{your-id}{}
+
+\quote{Focused resume version for tailored job applications in research, control, and energy systems engineering.}
+
+\begin{document}
+
+\makecvheader[C]
+
+\makecvfooter
+  {\today}
+  {Miquel Marti Florences~~~·~~~Resume}
+  {\thepage}
+
+\input{sections/summary.tex}
+\input{sections/experience.tex}
+\input{sections/education.tex}
+\input{sections/skills.tex}
+
+\end{document}

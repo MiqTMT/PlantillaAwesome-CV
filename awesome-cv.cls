@@ -81,30 +81,60 @@
 \defaultfontfeatures{
   Renderer=HarfBuzz,
 }
-\setmainfont{Source Sans 3}[
-  UprightFont=*,
-  ItalicFont=* Italic,
-  BoldFont=* Bold,
-  BoldItalicFont=* Bold Italic,
-  FontFace={l}{n}{Font=* Light},
-  FontFace={l}{it}{Font=* Light Italic},
-]
-\setsansfont{Source Sans 3}[
-  UprightFont=*,
-  ItalicFont=* Italic,
-  BoldFont=* Bold,
-  BoldItalicFont=* Bold Italic,
-  FontFace={l}{n}{Font=* Light},
-  FontFace={l}{it}{Font=* Light Italic},
-]
-\newfontfamily\roboto{Roboto}[
-  UprightFont=*,
-  ItalicFont=* Italic,
-  BoldFont=* Bold,
-  BoldItalicFont=* Bold Italic,
-  FontFace={l}{n}{Font=* Light},
-  FontFace={l}{it}{Font=* Light Italic},
-]
+\IfFileExists{C:/Users/Miquel/AppData/Local/Microsoft/Windows/Fonts/SourceSans3-Regular.ttf}{
+  \setmainfont{SourceSans3-Regular}[
+    Path = C:/Users/Miquel/AppData/Local/Microsoft/Windows/Fonts/,
+    Extension = .ttf,
+    ItalicFont = SourceSans3-Italic-VF,
+    BoldFont = SourceSans3-Bold,
+    BoldItalicFont = SourceSans3-BoldItalic,
+    FontFace = {l}{n}{Font = SourceSans3-Light},
+    FontFace = {l}{it}{Font = SourceSans3-LightItalic},
+  ]
+  \setsansfont{SourceSans3-Regular}[
+    Path = C:/Users/Miquel/AppData/Local/Microsoft/Windows/Fonts/,
+    Extension = .ttf,
+    ItalicFont = SourceSans3-Italic-VF,
+    BoldFont = SourceSans3-Bold,
+    BoldItalicFont = SourceSans3-BoldItalic,
+    FontFace = {l}{n}{Font = SourceSans3-Light},
+    FontFace = {l}{it}{Font = SourceSans3-LightItalic},
+  ]
+  \newfontfamily\roboto{Roboto-Regular}[
+    Path = C:/Users/Miquel/AppData/Local/Microsoft/Windows/Fonts/,
+    Extension = .ttf,
+    ItalicFont = Roboto-Italic-VF,
+    BoldFont = Roboto-Bold,
+    BoldItalicFont = Roboto-BoldItalic,
+    FontFace = {l}{n}{Font = Roboto-Light},
+    FontFace = {l}{it}{Font = Roboto-LightItalic},
+  ]
+}{
+  \setmainfont{Source Sans 3}[
+    UprightFont=*,
+    ItalicFont=* Italic,
+    BoldFont=* Bold,
+    BoldItalicFont=* Bold Italic,
+    FontFace={l}{n}{Font=* Light},
+    FontFace={l}{it}{Font=* Light Italic},
+  ]
+  \setsansfont{Source Sans 3}[
+    UprightFont=*,
+    ItalicFont=* Italic,
+    BoldFont=* Bold,
+    BoldItalicFont=* Bold Italic,
+    FontFace={l}{n}{Font=* Light},
+    FontFace={l}{it}{Font=* Light Italic},
+  ]
+  \newfontfamily\roboto{Roboto}[
+    UprightFont=*,
+    ItalicFont=* Italic,
+    BoldFont=* Bold,
+    BoldItalicFont=* Bold Italic,
+    FontFace={l}{n}{Font=* Light},
+    FontFace={l}{it}{Font=* Light Italic},
+  ]
+}
 % Needed for the photo ID
 \RequirePackage[skins]{tcolorbox}
 % Needed to deal a paragraphs

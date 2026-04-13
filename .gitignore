@@ -11,6 +11,8 @@
 ## Intermediate documents:
 *.dvi
 *-converted-to.*
+*.pdf
+*.synctex.gz
 
 ### Editor ###
 ## Vim & Emacs temp files:
