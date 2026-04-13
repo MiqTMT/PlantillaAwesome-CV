@@ -1,23 +1,23 @@
 {
-  "latex-workshop.latex.outDir": ".",
+  "latex-workshop.latex.outDir": "%WORKSPACE_FOLDER%/build",
   "latex-workshop.latex.tools": [
     {
-      "name": "xelatex",
-      "command": "xelatex",
+      "name": "latexmk_xelatex",
+      "command": "latexmk",
       "args": [
         "-synctex=1",
         "-interaction=nonstopmode",
         "-file-line-error",
-        "-output-directory=%OUTDIR%",
+        "-xelatex",
         "%DOC%"
       ]
     }
   ],
   "latex-workshop.latex.recipes": [
     {
-      "name": "XeLaTeX",
+      "name": "latexmk (XeLaTeX)",
       "tools": [
-        "xelatex"
+        "latexmk_xelatex"
       ]
     }
   ],
