@@ -81,29 +81,29 @@
 \defaultfontfeatures{
   Renderer=HarfBuzz,
 }
-\IfFileExists{fonts/SourceSans3-Regular.ttf}{
+\IfFileExists{C:/Users/Miquel/AppData/Local/Microsoft/Windows/Fonts/SourceSans3-Regular.ttf}{
   \setmainfont{SourceSans3-Regular}[
-    Path = fonts/,
+    Path = C:/Users/Miquel/AppData/Local/Microsoft/Windows/Fonts/,
     Extension = .ttf,
-    ItalicFont = SourceSans3-Italic,
+    ItalicFont = SourceSans3-Italic-VF,
     BoldFont = SourceSans3-Bold,
     BoldItalicFont = SourceSans3-BoldItalic,
     FontFace = {l}{n}{Font = SourceSans3-Light},
     FontFace = {l}{it}{Font = SourceSans3-LightItalic},
   ]
   \setsansfont{SourceSans3-Regular}[
-    Path = fonts/,
+    Path = C:/Users/Miquel/AppData/Local/Microsoft/Windows/Fonts/,
     Extension = .ttf,
-    ItalicFont = SourceSans3-Italic,
+    ItalicFont = SourceSans3-Italic-VF,
     BoldFont = SourceSans3-Bold,
     BoldItalicFont = SourceSans3-BoldItalic,
     FontFace = {l}{n}{Font = SourceSans3-Light},
     FontFace = {l}{it}{Font = SourceSans3-LightItalic},
   ]
   \newfontfamily\roboto{Roboto-Regular}[
-    Path = fonts/,
+    Path = C:/Users/Miquel/AppData/Local/Microsoft/Windows/Fonts/,
     Extension = .ttf,
-    ItalicFont = Roboto-Italic,
+    ItalicFont = Roboto-Italic-VF,
     BoldFont = Roboto-Bold,
     BoldItalicFont = Roboto-BoldItalic,
     FontFace = {l}{n}{Font = Roboto-Light},

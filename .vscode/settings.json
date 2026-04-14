@@ -1,5 +1,5 @@
 {
-  "latex-workshop.latex.outDir": "%WORKSPACE_FOLDER%/build",
+  "latex-workshop.latex.outDir": "%DIR%",
   "latex-workshop.latex.tools": [
     {
       "name": "latexmk_xelatex",
