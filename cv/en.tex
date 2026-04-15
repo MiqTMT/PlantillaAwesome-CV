@@ -1,0 +1,56 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+%!TEX root = ../build.tex
+
+\ifdefined\fromrootbuild
+  \documentclass[11pt, a4paper]{awesome-cv}
+  \def\sectionroot{sections}
+\else
+  \documentclass[11pt, a4paper]{../awesome-cv}
+  \def\sectionroot{../sections}
+\fi
+
+\input{\sectionroot/shared/preamble.tex}
+\input{\sectionroot/shared/personal-en.tex}
+\input{\sectionroot/headers/cv-en.tex}
+
+\begin{document}
+
+\makecvheader
+
+\makecvfooter
+  {\today}
+  {Miquel Mart\'i Florences~~~\textperiodcentered~~~Curriculum Vitae}
+  {\thepage}
+
+\input{\sectionroot/summaries/cv-en.tex}
+
+\cvsection{Experience}
+\begin{cventries}
+  \input{\sectionroot/experience/iri-phd-en.tex}
+  \input{\sectionroot/experience/iri-engineer-en.tex}
+  \input{\sectionroot/experience/e3-team-en.tex}
+  \input{\sectionroot/experience/idiada-en.tex}
+  \input{\sectionroot/experience/ako-en.tex}
+  \input{\sectionroot/experience/cimelec-en.tex}
+\end{cventries}
+
+\cvsection{Education}
+\begin{cventries}
+  \input{\sectionroot/education/phd-en.tex}
+  \input{\sectionroot/education/masters-en.tex}
+  \input{\sectionroot/education/bachelor-en.tex}
+\end{cventries}
+
+\input{\sectionroot/skills/en.tex}
+
+\cvsection{Publications}
+\begin{cventries}
+  \input{\sectionroot/publications/automatica-2026.tex}
+  \input{\sectionroot/publications/smart-grid-2026.tex}
+  \input{\sectionroot/publications/jes-2025.tex}
+  \input{\sectionroot/publications/batteries-2023.tex}
+  \input{\sectionroot/publications/energies-2023.tex}
+\end{cventries}
+
+\end{document}

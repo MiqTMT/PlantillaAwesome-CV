@@ -1,0 +1,46 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+%!TEX root = ../../build.tex
+
+\ifdefined\fromrootbuild
+  \documentclass[11pt, a4paper]{awesome-cv}
+  \def\sectionroot{sections}
+\else
+  \documentclass[11pt, a4paper]{../../awesome-cv}
+  \def\sectionroot{../../sections}
+\fi
+
+\input{\sectionroot/shared/preamble.tex}
+\input{\sectionroot/shared/personal-es.tex}
+\input{\sectionroot/headers/generic-es.tex}
+
+\begin{document}
+
+\makecvheader[C]
+
+\makecvfooter
+  {\today}
+  {Miquel Mart\'i Florences~~~\textperiodcentered~~~Curr\'iculum resumido}
+  {\thepage}
+
+\input{\sectionroot/summaries/generic-es.tex}
+
+\cvsection{Experiencia}
+\begin{cventries}
+  \input{\sectionroot/experience/iri-phd-es.tex}
+  \input{\sectionroot/experience/iri-engineer-es.tex}
+  \input{\sectionroot/experience/e3-team-es.tex}
+  \input{\sectionroot/experience/idiada-es.tex}
+  \input{\sectionroot/experience/ako-es.tex}
+\end{cventries}
+
+\cvsection{Formaci\'on}
+\begin{cventries}
+  \input{\sectionroot/education/phd-es.tex}
+  \input{\sectionroot/education/masters-es.tex}
+  \input{\sectionroot/education/bachelor-es.tex}
+\end{cventries}
+
+\input{\sectionroot/skills/es.tex}
+
+\end{document}

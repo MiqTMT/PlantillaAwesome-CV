@@ -1,126 +1,232 @@
-<h1 align="center">
-  <a href="https://github.com/posquit0/Awesome-CV" title="AwesomeCV Documentation">
-    <img alt="AwesomeCV" src="https://github.com/posquit0/Awesome-CV/raw/master/icon.png" width="200px" height="200px" />
-  </a>
-  <br />
-  Awesome CV
-</h1>
+# CV Repository
 
-<p align="center">
-  LaTeX template for your outstanding job application
-</p>
+This repository is organized around the files you actually build:
 
-<div align="center">
-  <a href="https://www.paypal.me/posquit0">
-    <img alt="Donate" src="https://img.shields.io/badge/Donate-PayPal-blue.svg" />
-  </a>
-  <a href="https://github.com/posquit0/Awesome-CV/actions/workflows/main.yml">
-    <img alt="GitHub Actions" src="https://github.com/posquit0/Awesome-CV/actions/workflows/main.yml/badge.svg" />
-  </a>
-  <a href="https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/resume.pdf">
-    <img alt="Example Resume" src="https://img.shields.io/badge/resume-pdf-green.svg" />
-  </a>
-  <a href="https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/cv.pdf">
-    <img alt="Example CV" src="https://img.shields.io/badge/cv-pdf-green.svg" />
-  </a>
-  <a href="https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/coverletter.pdf">
-    <img alt="Example Coverletter" src="https://img.shields.io/badge/coverletter-pdf-green.svg" />
-  </a>
-</div>
+- `cv/` for full CVs
+- `resumes/` for shorter or tailored resumes
+- `sections/` for reusable pieces
 
-<br />
+There is no hidden builder layer. Each CV or resume file directly loads the sections it wants.
 
-## What is Awesome CV?
+## Repository Layout
 
-**Awesome CV** is LaTeX template for a **CV(Curriculum Vitae)**, **Résumé** or **Cover Letter** inspired by [Fancy CV](https://www.sharelatex.com/templates/cv-or-resume/fancy-cv). It is easy to customize your own template, especially since it is really written by a clean, semantic markup.
-
-
-## Donate
-
-Please help keep this project alive! Donations are welcome and will go towards further development of this project.
-
-    PayPal: paypal.me/posquit0
-
-*Thank you for your support!*
-
-## Preview
-
-#### Résumé
-
-You can see [PDF](https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/resume.pdf)
-
-| Page. 1 | Page. 2 |
-|:---:|:---:|
-| [![Résumé](https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/resume-0.png)](https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/resume.pdf)  | [![Résumé](https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/resume-1.png)](https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/resume.pdf) |
-
-#### Cover Letter
-
-You can see [PDF](https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/coverletter.pdf)
-
-| Without Sections | With Sections |
-|:---:|:---:|
-| [![Cover Letter(Traditional)](https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/coverletter-0.png)](https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/coverletter.pdf)  | [![Cover Letter(Awesome)](https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/coverletter-1.png)](https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/coverletter.pdf) |
-
-
-## Quick Start
-
-* [**Edit Résumé on OverLeaf.com**](https://www.overleaf.com/latex/templates/awesome-cv/tvmzpvdjfqxp)
-* [**Edit Cover Letter on OverLeaf.com**](https://www.overleaf.com/latex/templates/awesome-cv-cover-letter/pfzzjspkthbk)
-
-**_Note:_ Above services do not guarantee up-to-date source code of Awesome CV**
-
-
-## How to Use
-
-#### Requirements
-
-A full TeX distribution is assumed.  [Various distributions for different operating systems (Windows, Mac, \*nix) are available](http://tex.stackexchange.com/q/55437) but TeX Live is recommended.
-You can [install TeX from upstream](https://tex.stackexchange.com/q/1092) (recommended; most up-to-date) or use `sudo apt-get install texlive-full` if you really want that.  (It's generally a few years behind.)
-
-If you don't want to install the dependencies on your system, this can also be obtained via [Docker](https://docker.com).
-
-#### Usage
-
-At a command prompt, run
-
-```bash
-xelatex {your-cv}.tex
+```text
+.
+|-- cv/
+|   |-- en.tex
+|   `-- es.tex
+|-- resumes/
+|   |-- generic/
+|   |   |-- en.tex
+|   |   `-- es.tex
+|   `-- company-template/
+|       |-- en.tex
+|       `-- es.tex
+|-- sections/
+|   |-- shared/
+|   |-- headers/
+|   |-- summaries/
+|   |-- experience/
+|   |-- education/
+|   |-- skills/
+|   `-- publications/
+|-- awesome-cv.cls
+|-- awesome-cv.cls.bak
+`-- Makefile
 ```
 
-Or using docker:
+## Mental Model
 
-```bash
-docker run --rm --user $(id -u):$(id -g) -i -w "/doc" -v "$PWD":/doc texlive/texlive:latest make
+- `cv/en.tex` means "build the English full CV"
+- `cv/es.tex` means "build the Spanish full CV"
+- `resumes/generic/en.tex` means "build the English generic resume"
+- `sections/` stores the reusable text blocks
+
+When you open one of the compilable files, you can immediately see:
+
+- which language it is
+- which sections it includes
+- which entries it keeps or omits
+- in what order they appear
+
+## What To Edit
+
+### Shared personal details
+
+Edit:
+
+- `sections/shared/personal-en.tex`
+- `sections/shared/personal-es.tex`
+
+Keep contact info, location, and public links aligned here.
+
+### Header line under your name
+
+Edit:
+
+- `sections/headers/cv-en.tex`
+- `sections/headers/cv-es.tex`
+- `sections/headers/generic-en.tex`
+- `sections/headers/generic-es.tex`
+- `sections/headers/company-template-en.tex`
+- `sections/headers/company-template-es.tex`
+
+### Summary paragraph
+
+Edit:
+
+- `sections/summaries/cv-en.tex`
+- `sections/summaries/cv-es.tex`
+- `sections/summaries/generic-en.tex`
+- `sections/summaries/generic-es.tex`
+- `sections/summaries/company-template-en.tex`
+- `sections/summaries/company-template-es.tex`
+
+### Experience entries
+
+Edit:
+
+- `sections/experience/*-en.tex`
+- `sections/experience/*-es.tex`
+
+Each file is one experience entry in one language.
+
+### Education entries
+
+Edit:
+
+- `sections/education/*-en.tex`
+- `sections/education/*-es.tex`
+
+### Skills
+
+Edit:
+
+- `sections/skills/en.tex`
+- `sections/skills/es.tex`
+
+### Publications
+
+Edit:
+
+- `sections/publications/*.tex`
+
+## Workflow
+
+### Main outputs
+
+The actual compilable files are:
+
+- `cv/en.tex`
+- `cv/es.tex`
+- `resumes/generic/en.tex`
+- `resumes/generic/es.tex`
+- `resumes/company-template/en.tex`
+- `resumes/company-template/es.tex`
+
+Each of those files already assembles a complete document.
+
+### Build from the repo root
+
+Direct build:
+
+```powershell
+xelatex cv/en.tex
+xelatex cv/es.tex
+xelatex resumes/generic/en.tex
+xelatex resumes/generic/es.tex
+xelatex resumes/company-template/en.tex
+xelatex resumes/company-template/es.tex
 ```
 
-In either case, this should result in the creation of ``{your-cv}.pdf``
+Root wrapper build:
 
+Use [build.tex](c:\Users\mmartif\Documents\GitHub\PlantillaAwesome-CV\build.tex) if you prefer a single root-level file.
 
-## Credit
+Uncomment exactly one line such as:
 
-[**LaTeX**](https://www.latex-project.org) is a fantastic typesetting program that a lot of people use these days, especially the math and computer science people in academia.
+```tex
+\input{cv/en.tex}
+```
 
-[**FontAwesome6 LaTeX Package**](https://github.com/braniii/fontawesome) is a LaTeX package that provides access to the [Font Awesome 6](https://fontawesome.com/v6/icons) icon set.
+Available inputs:
 
-[**Roboto**](https://github.com/google/roboto) is the default font on Android and ChromeOS, and the recommended font for Google’s visual language, Material Design.
+- `\input{cv/en.tex}`
+- `\input{cv/es.tex}`
+- `\input{resumes/generic/en.tex}`
+- `\input{resumes/generic/es.tex}`
+- `\input{resumes/company-template/en.tex}`
+- `\input{resumes/company-template/es.tex}`
 
-[**Source Sans Pro**](https://github.com/adobe-fonts/source-sans-pro) is a set of OpenType fonts that have been designed to work well in user interface (UI) environments.
+Then compile:
 
+```powershell
+xelatex build.tex
+```
 
-## Contact
+`build.tex` is only a thin wrapper. It forwards to one already-compilable file such as `cv/es.tex` or `resumes/generic/en.tex`.
 
-You are free to take my `.tex` file and modify it to create your own resume. Please don't use my resume for anything else without my permission, though!
+### Make targets
 
-If you have any questions, feel free to join me at [`#posquit0` on Freenode](irc://irc.freenode.net/posquit0) and ask away. Click [here](https://kiwiirc.com/client/irc.freenode.net/posquit0) to connect.
+You can also use:
 
-Good luck!
+```powershell
+make cv-en
+make cv-es
+make resume-generic-en
+make resume-generic-es
+```
 
+## How To Add A New Company Resume
 
-## Maintainers
-- [posquit0](https://github.com/posquit0)
-- [OJFord](https://github.com/OJFord)
+Suppose you want a tailored resume for a company called `tesla`.
 
+1. Create:
+   - `resumes/tesla/en.tex`
+   - `resumes/tesla/es.tex`
+2. Copy one of the existing resume files as a starting point.
+3. Change the loaded summary and header if needed.
+4. Reorder, remove, or swap entries directly in that resume file.
 
-## See Also
+This keeps the customization visible in the actual resume file.
 
-* [Awesome Identity](https://github.com/posquit0/hugo-awesome-identity) - A single-page Hugo theme to introduce yourself.
+## How To Add A Company-Specific Version Of One Experience
+
+If one company needs a special wording for a single experience, do not rewrite the shared entry for everyone.
+
+Create a targeted override instead, for example:
+
+- `sections/experience/iri-engineer-tesla-en.tex`
+- `sections/experience/iri-engineer-tesla-es.tex`
+
+Then in `resumes/tesla/en.tex`, load:
+
+```tex
+\input{sections/experience/iri-engineer-tesla-en.tex}
+```
+
+instead of:
+
+```tex
+\input{sections/experience/iri-engineer-en.tex}
+```
+
+That way:
+
+- the full CV stays canonical
+- the generic resume stays canonical
+- the Tesla resume gets its one special variant
+
+## Consistency Rules
+
+- Keep stable facts in the shared experience and education entries.
+- Use the Spanish and English files as language pairs.
+- Tailor resumes by changing which files are loaded and in what order.
+- Only create company-specific variants when the wording really must change for that target.
+- Keep `awesome-cv.cls.bak` as the class backup.
+
+## Notes
+
+- `examples/` remains upstream reference material from Awesome-CV.
+- `oldcv/` remains archival material.
+- Build artifacts such as `.aux`, `.log`, `.pdf`, and `.synctex.gz` should not be treated as source files.

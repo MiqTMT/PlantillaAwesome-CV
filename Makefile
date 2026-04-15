@@ -1,22 +1,23 @@
-.PHONY: examples
+.PHONY: cv-en cv-es resume-generic-en resume-generic-es resume-company-template-en resume-company-template-es all
 
-CC = lualatex
-EXAMPLES_DIR = examples
-RESUME_DIR = examples/resume
-CV_DIR = examples/cv
-RESUME_SRCS = $(shell find $(RESUME_DIR) -name '*.tex')
-CV_SRCS = $(shell find $(CV_DIR) -name '*.tex')
+TEX = xelatex
 
-examples: $(foreach x, coverletter cv resume, $x.pdf)
+all: cv-en cv-es resume-generic-en resume-generic-es
 
-resume.pdf: $(EXAMPLES_DIR)/resume.tex $(RESUME_SRCS)
-	$(CC) -output-directory=$(EXAMPLES_DIR) $<
+cv-en:
+	$(TEX) cv/en.tex
 
-cv.pdf: $(EXAMPLES_DIR)/cv.tex $(CV_SRCS)
-	$(CC) -output-directory=$(EXAMPLES_DIR) $<
+cv-es:
+	$(TEX) cv/es.tex
 
-coverletter.pdf: $(EXAMPLES_DIR)/coverletter.tex
-	$(CC) -output-directory=$(EXAMPLES_DIR) $<
+resume-generic-en:
+	$(TEX) resumes/generic/en.tex
 
-clean:
-	rm -rf $(EXAMPLES_DIR)/*.pdf
+resume-generic-es:
+	$(TEX) resumes/generic/es.tex
+
+resume-company-template-en:
+	$(TEX) resumes/company-template/en.tex
+
+resume-company-template-es:
+	$(TEX) resumes/company-template/es.tex
