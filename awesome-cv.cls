@@ -162,7 +162,7 @@
 %-------------------------------------------------------------------------------
 %% Page Layout
 % Configure page margins with geometry
-\geometry{left=2.0cm, top=1.5cm, right=2.0cm, bottom=2.0cm, footskip=.5cm}
+\geometry{left=2.0cm, top=2.2cm, right=2.0cm, bottom=2.0cm, footskip=.5cm}
 
 %% Header & Footer
 % Set offset to each header and footer
@@ -499,6 +499,7 @@
 \newcommand{\acvHeaderSocialSep}{\BeginAccSupp{ActualText={}}\quad\textbar\quad\EndAccSupp{}}
 \newcommand{\acvHeaderAfterSocialSkip}{6mm}
 \newcommand{\acvHeaderAfterQuoteSkip}{5mm}
+\newcommand{\acvHeaderTopSkip}{3mm}
 
 % Others
 \newcommand{\acvSectionTopSkip}{3mm}
@@ -532,6 +533,7 @@
 % Define a header for CV
 % Usage: \makecvheader
 \newcommand*{\makecvheader}[1][C]{%
+  \vspace*{\acvHeaderTopSkip}%
   \newcommand*{\drawphoto}{%
     \ifthenelse{\isundefined{\@photo}}{}{%
       \newlength{\photodim}
@@ -733,7 +735,7 @@
 % Define a section for CV
 % Usage: \cvsection{<section-title>}
 \newcommand{\cvsection}[1]{%
-  \vspace{\acvSectionTopSkip}
+  \vspace*{\acvSectionTopSkip}
   \sectionstyle{#1}
   \phantomsection
   \color{sectiondivider}\vhrulefill{0.9pt}
