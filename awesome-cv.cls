@@ -786,18 +786,23 @@
   \vspace{-2.0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
-    \ifempty{#3#4}
-      {\multicolumn{2}{L{\textwidth}}{\entrytitlestyle{#2}} \\
-       \multicolumn{2}{L{\textwidth}}{\entrypositionstyle{#1}} \\}
-      {\ifempty{#2#3}
+  \ifempty{#3#4}
+    {\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth}}
+      \entrytitlestyle{#2} \\
+      \entrypositionstyle{#1} \\
+      \ifstrempty{#5}
+        {}
+        {\descriptionstyle{#5} \\}
+    \end{tabular*}}
+    {\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+      \ifempty{#2#3}
         {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
         {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
-        \entrypositionstyle{#1} & \entrydatestyle{#4} \\}}
-    \ifstrempty{#5}
-      {}
-      {\multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}} \\}
-  \end{tabular*}%
+        \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+      \ifstrempty{#5}
+        {}
+        {\multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}} \\}
+    \end{tabular*}}%
 }
 
 % Define an environment for cvsubentry
