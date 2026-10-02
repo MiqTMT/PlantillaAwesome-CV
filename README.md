@@ -131,13 +131,19 @@ Each of those files already assembles a complete document.
 Direct build:
 
 ```powershell
-xelatex cv/en.tex
-xelatex cv/es.tex
-xelatex resumes/generic/en.tex
-xelatex resumes/generic/es.tex
-xelatex resumes/company-template/en.tex
-xelatex resumes/company-template/es.tex
+Push-Location cv
+xelatex en.tex
+Pop-Location
+
+Push-Location resumes/generic
+xelatex en.tex
+Pop-Location
 ```
+
+Replace `en.tex` with `es.tex` for the Spanish version. For the company
+template, use `Push-Location resumes/company-template` instead. The
+directory change is required because each source uses relative paths to load
+the class and shared sections.
 
 Root wrapper build:
 

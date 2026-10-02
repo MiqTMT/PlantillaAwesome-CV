@@ -5,19 +5,19 @@ TEX = xelatex
 all: cv-en cv-es resume-generic-en resume-generic-es
 
 cv-en:
-	$(TEX) cv/en.tex
+	cd cv && $(TEX) en.tex
 
 cv-es:
-	$(TEX) cv/es.tex
+	cd cv && $(TEX) es.tex
 
 resume-generic-en:
-	$(TEX) resumes/generic/en.tex
+	cd resumes/generic && $(TEX) en.tex
 
 resume-generic-es:
-	$(TEX) resumes/generic/es.tex
+	cd resumes/generic && $(TEX) es.tex
 
 resume-company-template-en:
-	$(TEX) resumes/company-template/en.tex
+	cd resumes/company-template && $(TEX) en.tex
 
 resume-company-template-es:
-	$(TEX) resumes/company-template/es.tex
+	cd resumes/company-template && $(TEX) es.tex

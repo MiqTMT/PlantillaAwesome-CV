@@ -82,8 +82,21 @@
   Renderer=HarfBuzz,
 }
 \IfFileExists{fonts/SourceSans3-Regular.ttf}{
+  \def\fontpath{fonts/}
+}{
+  \IfFileExists{../fonts/SourceSans3-Regular.ttf}{
+    \def\fontpath{../fonts/}
+  }{
+    \IfFileExists{../../fonts/SourceSans3-Regular.ttf}{
+      \def\fontpath{../../fonts/}
+    }{
+      \def\fontpath{fonts/}
+    }
+  }
+}
+\IfFileExists{\fontpath SourceSans3-Regular.ttf}{
   \setmainfont{SourceSans3-Regular}[
-    Path = fonts/,
+    Path = \fontpath,
     Extension = .ttf,
     ItalicFont = SourceSans3-Italic,
     BoldFont = SourceSans3-Bold,
@@ -92,7 +105,7 @@
     FontFace = {l}{it}{Font = SourceSans3-LightItalic},
   ]
   \setsansfont{SourceSans3-Regular}[
-    Path = fonts/,
+    Path = \fontpath,
     Extension = .ttf,
     ItalicFont = SourceSans3-Italic,
     BoldFont = SourceSans3-Bold,
@@ -101,7 +114,7 @@
     FontFace = {l}{it}{Font = SourceSans3-LightItalic},
   ]
   \newfontfamily\roboto{Roboto-Regular}[
-    Path = fonts/,
+    Path = \fontpath,
     Extension = .ttf,
     ItalicFont = Roboto-Italic,
     BoldFont = Roboto-Bold,
@@ -774,10 +787,13 @@
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
-    \ifempty{#2#3}
-      {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
-      {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
-      \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+    \ifempty{#3#4}
+      {\multicolumn{2}{L{\textwidth}}{\entrytitlestyle{#2}} \\
+       \multicolumn{2}{L{\textwidth}}{\entrypositionstyle{#1}} \\}
+      {\ifempty{#2#3}
+        {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+        {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
+        \entrypositionstyle{#1} & \entrydatestyle{#4} \\}}
     \ifstrempty{#5}
       {}
       {\multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}} \\}
